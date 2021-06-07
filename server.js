@@ -9,6 +9,8 @@ app.get("/", (req, res) => {
   res.send("API running");
 });
 
+app.use("/api/messages", require("./routes/api/messages"));
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
