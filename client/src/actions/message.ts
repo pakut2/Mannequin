@@ -1,6 +1,7 @@
 import axios from "axios";
 import { MESSAGE_SUCCESS, MESSAGE_FAIL } from "./types";
 
+// Send message
 export const sendMessage = (formData: Object) => async (dispatch: any) => {
   try {
     const config = {

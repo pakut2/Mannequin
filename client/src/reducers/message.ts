@@ -14,12 +14,14 @@ export default function (
 
   switch (type) {
     case MESSAGE_SUCCESS:
+      localStorage.setItem("id", payload._id);
       return {
         ...state,
         message: payload,
         loading: false,
       };
     case MESSAGE_FAIL:
+      localStorage.removeItem("id");
       return {
         ...state,
         error: payload,

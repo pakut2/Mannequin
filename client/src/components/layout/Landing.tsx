@@ -13,10 +13,10 @@ const Landing = ({ sendMessage }: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  function onSubmit(e: any) {
+  const onSubmit = (e: any) => {
     e.preventDefault();
     sendMessage(formData);
-  }
+  };
 
   return (
     <Fragment>
