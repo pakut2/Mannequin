@@ -2,4 +2,66 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  background: #92bde7;
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.form .form-group {
+  margin: 1.2rem 0;
+  color: rgb(185, 226, 240);
+}
+
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff;
+  color: black;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
