@@ -31,7 +31,3 @@ const App = () => {
 };
 
 export default App;
-
-// TODO
-// UI
-//? URL shortener
