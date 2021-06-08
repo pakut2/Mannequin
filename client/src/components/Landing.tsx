@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { sendMessage } from "../actions/message";
+import { setAlert } from "../actions/alert";
 
 const Landing = ({ sendMessage, message: { loading, message } }: any) => {
   const [formData, setFormData] = useState({ text: "" });
@@ -39,9 +40,9 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
         ></textarea>
         <input type="submit" className="btn" value="Submit" />
       </form>
-      {!loading && (
+      {!loading && message !== null && (
         <p
-          className="lead text-center dark-overlay hide-sm"
+          className="link lead text-center dark-overlay hide-sm"
           onClick={(e: any) => {
             e.target.classList.remove("dark-overlay");
           }}
@@ -51,9 +52,9 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
           <i
             className="fa fa-clipboard large"
             aria-hidden="true"
-            onClick={(e: any) =>
-              navigator.clipboard.writeText(e.target.parentElement.innerText)
-            }
+            onClick={(e: any) => {
+              navigator.clipboard.writeText(e.target.parentElement.innerText);
+            }}
           ></i>
         </p>
       )}

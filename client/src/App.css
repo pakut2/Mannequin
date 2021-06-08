@@ -14,13 +14,6 @@ body {
   /* overflow: hidden; */
 }
 
-p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
 .fa-clipboard {
   cursor: pointer;
   transition: opacity 0.2s ease-in;
@@ -37,6 +30,12 @@ p {
   padding: 0 2rem;
   margin-top: 4rem;
   margin-bottom: 3rem;
+}
+
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
 .large {
@@ -89,9 +88,17 @@ p {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  text-decoration: none;
 }
 .btn:hover {
   opacity: 0.8;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .wave {
