@@ -9,7 +9,7 @@ const Message = require("../../models/Message");
 // @access  public
 router.post(
   "/",
-  check("message", "Message is required").not().isEmpty(),
+  check("text", "Text is required").not().isEmpty(),
   async (req, res) => {
     const errors = validationResult(req);
 
@@ -17,11 +17,11 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { message } = req.body;
+    const { text } = req.body;
 
     try {
       const msg = new Message({
-        message,
+        text,
       });
 
       await msg.save();
