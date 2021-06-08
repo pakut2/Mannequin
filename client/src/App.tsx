@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Alert from "./components/Alert";
 import Landing from "./components/Landing";
 import Message from "./components/Message";
+import { NotFound } from "./components/NotFound";
 import { ReactComponent as Wave } from "./components/wave.svg";
 import "./App.css";
 
@@ -19,6 +20,7 @@ const App = () => {
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/messages/:id" component={Message} />
+              <Route component={NotFound} />
             </Switch>
           </section>
           {/* <Wave className="wave" /> */}
@@ -34,5 +36,4 @@ export default App;
 // Transparent loading
 // UI
 // Delete msg
-// Copy link to clipboard
 //? URL shortener

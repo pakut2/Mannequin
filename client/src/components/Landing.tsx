@@ -17,6 +17,10 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
     sendMessage(formData);
   };
 
+  const handleClick = (e: any) => {
+    navigator.clipboard.writeText(e.target.parentElement.innerText);
+  };
+
   return (
     <Fragment>
       <h1 className="large">Mannequin</h1>
@@ -35,14 +39,25 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
           onChange={(e) => {
             onChange(e);
           }}
+          required
         ></textarea>
         <input type="submit" className="btn" value="Submit" />
       </form>
       {!loading && (
-        <h1>
+        <p
+          className="lead text-center dark-overlay"
+          onClick={(e: any) => {
+            e.target.classList.remove("dark-overlay");
+          }}
+        >
           {window.location.href}messages/
-          {message._id}
-        </h1>
+          {message._id}{" "}
+          <i
+            className="fa fa-clipboard large"
+            aria-hidden="true"
+            onClick={(e: any) => handleClick(e)}
+          ></i>
+        </p>
       )}
     </Fragment>
   );

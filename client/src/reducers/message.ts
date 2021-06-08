@@ -25,12 +25,15 @@ export default function (
         message: payload,
         loading: false,
       };
-    case MESSAGE_FAIL:
     case DELETE_MESSAGE:
       return {
         ...state,
+      };
+    case MESSAGE_FAIL:
+      return {
+        ...state,
         error: payload,
-        loading: true,
+        loading: false,
         message: null,
       };
     default:
