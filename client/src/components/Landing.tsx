@@ -76,13 +76,16 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
             e.target.style.color = "#11272b";
           }}
         >
-          {window.location.href}
-          <span className="hide-sm">messages/{message._id}</span>{" "}
+          <span className="hide-sm">
+            {window.location.href}messages/{message._id}
+          </span>{" "}
           <i
             className="fa fa-clipboard large"
             aria-hidden="true"
-            onClick={(e: any) => {
-              navigator.clipboard.writeText(e.target.parentElement.innerText);
+            onClick={() => {
+              navigator.clipboard.writeText(
+                `${window.location}messages/${message._id}`
+              );
             }}
           ></i>
         </p>
