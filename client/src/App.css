@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
   color: #fff;
   background: #92bde7;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 textarea {
@@ -103,6 +103,10 @@ textarea {
   opacity: 0.8;
 }
 
+.message span {
+  word-wrap: break-word;
+}
+
 .link {
   display: flex;
   justify-content: center;
@@ -159,7 +163,15 @@ textarea {
     display: none;
   }
 
+  .x-large {
+    font-size: 3rem;
+  }
+
   .large {
     font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
   }
 }
