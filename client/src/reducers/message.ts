@@ -1,4 +1,9 @@
-import { MESSAGE_SUCCESS, MESSAGE_FAIL } from "../actions/types";
+import {
+  MESSAGE_SUCCESS,
+  MESSAGE_FAIL,
+  GET_MESSAGE,
+  DELETE_MESSAGE,
+} from "../actions/types";
 
 const initialState = {
   message: null,
@@ -14,18 +19,18 @@ export default function (
 
   switch (type) {
     case MESSAGE_SUCCESS:
-      localStorage.setItem("id", payload._id);
+    case GET_MESSAGE:
       return {
         ...state,
         message: payload,
         loading: false,
       };
     case MESSAGE_FAIL:
-      localStorage.removeItem("id");
+    case DELETE_MESSAGE:
       return {
         ...state,
         error: payload,
-        loading: false,
+        loading: true,
         message: null,
       };
     default:

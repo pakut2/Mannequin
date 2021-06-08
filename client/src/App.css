@@ -11,16 +11,15 @@ body {
   line-height: 1.6;
   color: #fff;
   background: #92bde7;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
-section {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  padding: 1rem;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 .large {
@@ -64,4 +63,34 @@ section {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: -1;
+}
+
+.alert-success {
+  background: #28a745;
+  color: #fff;
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.alert-danger {
+  background: #dc3545;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin-top: 6rem;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
 }

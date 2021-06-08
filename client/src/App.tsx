@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Landing from "./components/layout/Landing";
+import Alert from "./components/Alert";
+import Landing from "./components/Landing";
+import Message from "./components/Message";
+import { ReactComponent as Wave } from "./components/wave.svg";
 import "./App.css";
 
 import { Provider } from "react-redux";
@@ -11,9 +14,14 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-          </Switch>
+          <section className="container">
+            <Alert />
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/messages/:id" component={Message} />
+            </Switch>
+          </section>
+          {/* <Wave className="wave" /> */}
         </Fragment>
       </Router>
     </Provider>
@@ -21,3 +29,10 @@ const App = () => {
 };
 
 export default App;
+
+// TODO
+// Transparent loading
+// UI
+// Delete msg
+// Copy link to clipboard
+//? URL shortener
