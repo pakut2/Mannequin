@@ -4,7 +4,7 @@ import Alert from "./components/Alert";
 import Landing from "./components/Landing";
 import Message from "./components/Message";
 import { NotFound } from "./components/NotFound";
-import { ReactComponent as Wave } from "./components/wave.svg";
+import { ReactComponent as Wave } from "./components/assets/wave.svg";
 import "./App.css";
 
 import { Provider } from "react-redux";
@@ -23,7 +23,7 @@ const App = () => {
               <Route component={NotFound} />
             </Switch>
           </section>
-          {/* <Wave className="wave" /> */}
+          <Wave className="wave" />
         </Fragment>
       </Router>
     </Provider>
@@ -33,7 +33,5 @@ const App = () => {
 export default App;
 
 // TODO
-// Transparent loading
 // UI
-// Delete msg
 //? URL shortener

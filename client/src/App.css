@@ -21,13 +21,13 @@ p {
   padding: 1rem;
 }
 
-i {
+.fa-clipboard {
   cursor: pointer;
   transition: opacity 0.2s ease-in;
   outline: none;
   padding-left: 1rem;
 }
-i:hover {
+.fa-clipboard:hover {
   opacity: 0.8;
 }
 
@@ -35,7 +35,7 @@ i:hover {
   max-width: 1100px;
   margin: auto;
   padding: 0 2rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 

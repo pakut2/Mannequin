@@ -1,5 +1,6 @@
 function formatDate(date: Date) {
-  return new Intl.DateTimeFormat().format(new Date(date));
+  const newDate = new Date(date);
+  return newDate.toLocaleString().slice(0, -1);
 }
 
 export default formatDate;

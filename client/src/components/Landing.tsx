@@ -17,10 +17,6 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
     sendMessage(formData);
   };
 
-  const handleClick = (e: any) => {
-    navigator.clipboard.writeText(e.target.parentElement.innerText);
-  };
-
   return (
     <Fragment>
       <h1 className="large">Mannequin</h1>
@@ -45,7 +41,7 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
       </form>
       {!loading && (
         <p
-          className="lead text-center dark-overlay"
+          className="lead text-center dark-overlay hide-sm"
           onClick={(e: any) => {
             e.target.classList.remove("dark-overlay");
           }}
@@ -55,7 +51,9 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
           <i
             className="fa fa-clipboard large"
             aria-hidden="true"
-            onClick={(e: any) => handleClick(e)}
+            onClick={(e: any) =>
+              navigator.clipboard.writeText(e.target.parentElement.innerText)
+            }
           ></i>
         </p>
       )}

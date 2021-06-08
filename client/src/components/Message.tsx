@@ -1,6 +1,5 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Spinner } from "./Spinner";
 import { NotFound } from "./NotFound";
 import { connect } from "react-redux";
 import { getMessage, deleteMessage } from "../actions/message";
@@ -16,20 +15,16 @@ const Message = ({
     getMessage(match.params.id);
   }, [getMessage]);
 
-  if (loading || message === null) {
-    return <NotFound />;
-  }
-
   return (
     <Fragment>
       {loading || message === null ? (
-        <Spinner />
+        <NotFound />
       ) : (
         <Fragment>
           Message: {message.text} Created on: {formatDate(message.date)}
           {setTimeout(() => {
             deleteMessage(match.params.id);
-          }, 3000)}
+          }, 300000)}
         </Fragment>
       )}
     </Fragment>
