@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { NotFound } from "./NotFound";
 import { connect } from "react-redux";
@@ -15,16 +16,28 @@ const Message = ({
     getMessage(match.params.id);
   }, [getMessage]);
 
+  if (!loading && message !== null) {
+    {
+      setTimeout(() => {
+        deleteMessage(match.params.id);
+      }, message.timeout);
+    }
+  }
+
   return (
     <Fragment>
       {loading || message === null ? (
         <NotFound />
       ) : (
         <Fragment>
-          Message: {message.text} Created on: {formatDate(message.date)}
-          {setTimeout(() => {
-            deleteMessage(match.params.id);
-          }, 300000)}
+          <div className="message">
+            <h1 className="large">Message:</h1>{" "}
+            <span className="lead">{message.text}</span>
+          </div>
+          <p>Created on: {formatDate(message.date)}</p>
+          <Link to="/" className="btn btn-link">
+            Compose New Message
+          </Link>
         </Fragment>
       )}
     </Fragment>

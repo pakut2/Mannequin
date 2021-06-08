@@ -17,11 +17,12 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { text } = req.body;
+    const { text, timeout } = req.body;
 
     try {
       const msg = new Message({
         text,
+        timeout,
       });
 
       await msg.save();

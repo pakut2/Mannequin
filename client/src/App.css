@@ -1,3 +1,8 @@
+::selection {
+  color: #92bde7;
+  background: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +17,10 @@ body {
   color: #fff;
   background: #92bde7;
   /* overflow: hidden; */
+}
+
+textarea {
+  resize: none;
 }
 
 .fa-clipboard {
@@ -99,6 +108,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  color: #fff;
+}
+
+.btn-link {
+  margin-top: 1rem;
 }
 
 .wave {
@@ -121,6 +135,19 @@ body {
   display: inline-block;
   width: 100%;
   padding: 0.5rem;
+}
+
+.select {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.select select {
+  font-size: 1rem;
+  padding: 0.2rem;
+}
+.select button {
+  width: 100%;
 }
 
 @media (max-width: 700px) {

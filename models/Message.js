@@ -5,6 +5,9 @@ const MessageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  timeout: {
+    type: Number,
+  },
   date: {
     type: Date,
     default: Date.now,

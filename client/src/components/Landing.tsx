@@ -2,12 +2,13 @@ import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { sendMessage } from "../actions/message";
-import { setAlert } from "../actions/alert";
 
 const Landing = ({ sendMessage, message: { loading, message } }: any) => {
-  const [formData, setFormData] = useState({ text: "" });
+  const [formData, setFormData] = useState({ text: "", timeout: 5000 });
 
-  const { text } = formData;
+  const [displayInputs, toggleInputs] = useState(false);
+
+  const { text, timeout } = formData;
 
   const onChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,17 +39,45 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
           }}
           required
         ></textarea>
+        <div className="select">
+          <button
+            onClick={() => {
+              toggleInputs(!displayInputs);
+            }}
+            type="button"
+            className="btn"
+          >
+            Specify Self-Destruct Time Period
+          </button>
+
+          {displayInputs && (
+            <Fragment>
+              <select
+                value={timeout}
+                name="timeout"
+                onChange={(e) => onChange(e)}
+              >
+                <option value="5000">5s</option>
+                <option value="10000">10s</option>
+                <option value="15000">15s</option>
+                <option value="30000">30s</option>
+                <option value="60000">60s</option>
+              </select>
+            </Fragment>
+          )}
+        </div>
         <input type="submit" className="btn" value="Submit" />
       </form>
       {!loading && message !== null && (
         <p
-          className="link lead text-center dark-overlay hide-sm"
+          className="link lead text-center dark-overlay"
           onClick={(e: any) => {
             e.target.classList.remove("dark-overlay");
+            e.target.style.color = "#11272b";
           }}
         >
-          {window.location.href}messages/
-          {message._id}{" "}
+          {window.location.href}
+          <span className="hide-sm">messages/{message._id}</span>{" "}
           <i
             className="fa fa-clipboard large"
             aria-hidden="true"
