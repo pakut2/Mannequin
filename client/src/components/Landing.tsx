@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { setAlert } from "../actions/alert";
 import { sendMessage } from "../actions/message";
+import store from "../store";
 
 const Landing = ({ sendMessage, message: { loading, message } }: any) => {
   const [formData, setFormData] = useState({ text: "", timeout: 5000 });
@@ -86,6 +88,7 @@ const Landing = ({ sendMessage, message: { loading, message } }: any) => {
               navigator.clipboard.writeText(
                 `${window.location}messages/${message._id}`
               );
+              store.dispatch(setAlert("Copied To Clipboard!", "success"));
             }}
           ></i>
         </p>
