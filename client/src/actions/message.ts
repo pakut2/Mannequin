@@ -23,7 +23,7 @@ export const sendMessage = (formData: Object) => async (dispatch: any) => {
       payload: res.data,
     });
 
-    dispatch(setAlert("Message Composed", "success"));
+    dispatch(setAlert("Message Composed!", "success"));
   } catch (err) {
     const errors = err.response.data.errors;
 
